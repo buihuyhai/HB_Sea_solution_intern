@@ -10,16 +10,16 @@ namespace testoop1.Handlers
 {
     public class TransactionHandler
     {
-        private string _connectionString;
+        private string connectionString="";
 
         public TransactionHandler(string connectionString)
         {
-            _connectionString = connectionString;
+            this.connectionString = connectionString;
         }
 
         public void SaveTransaction(ISaveable transaction)
         {
-            using (MySqlConnection connection = new MySqlConnection(_connectionString))
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
                 transaction.Save(connection);

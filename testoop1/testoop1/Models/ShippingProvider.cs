@@ -8,14 +8,14 @@ namespace testoop1.Models
 {
     public class ShippingProvider
     {
-        public string Shipping_Provider_Id { get; set; }
+        public string ShippingProviderId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
 
-        public ShippingProvider(string shipping_provider_id, string name, string address, string phone)
+        public ShippingProvider(string shippingproviderid, string name, string address, string phone)
         {
-            Shipping_Provider_Id = shipping_provider_id;
+            ShippingProviderId = shippingproviderid;
             Name = name;
             Address = address;
             Phone = phone;

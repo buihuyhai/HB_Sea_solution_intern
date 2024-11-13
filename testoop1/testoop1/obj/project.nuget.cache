@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0r4L3+DdrOk=",
+  "dgSpecHash": "PdJpPmYyES0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hai30\\source\\repos\\testoop1\\testoop1\\testoop1.csproj",
+  "projectFilePath": "E:\\Sea_solutions\\testoop1\\testoop1\\testoop1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hai30\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\hai30\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",

@@ -9,10 +9,10 @@ namespace testoop1.Abstracts
 {
     public abstract class Transaction
     {
-        public decimal Total_Amount { get; set; }
-        public Transaction(decimal total_amount)
+        public decimal TotalAmount { get; set; }
+        public Transaction(decimal totalamount)
         {
-            Total_Amount = total_amount;
+            TotalAmount = totalamount;
         }
         public abstract void Save(MySqlConnection connection);
     }

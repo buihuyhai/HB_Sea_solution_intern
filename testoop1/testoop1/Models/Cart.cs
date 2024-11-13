@@ -11,33 +11,33 @@ namespace testoop1.Models
 {
     public class Cart : Transaction, ISaveable
     {
-        public string Cart_Id { get; set; }
-        public DateTime Created_At { get; set; }
-        public DateTime Updated_At { get; set; }
-        public string Customer_Id { get; set; }
+        public string CartId { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public string CustomerId { get; set; }
 
         public List<ShoppingCart> Itemss { get; set; }
 
-        public Cart(string cart_id, decimal total_amount, string customer_id) : base(total_amount)
+        public Cart(string cartid, decimal totalamount, string customerid) : base(totalamount)
         {
-            Cart_Id = cart_id;
-            Total_Amount = total_amount;
-            Created_At = DateTime.Now;
-            Updated_At = DateTime.Now;
-            Customer_Id = customer_id;
+            CartId = cartid;
+            TotalAmount = totalamount;
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
+            CustomerId = customerid;
             Itemss = new List<ShoppingCart>();
         }
         public override void Save(MySqlConnection connection)
         {
             string query = "INSERT INTO Cart (cart_id, total_amount, created_at, updated_at, customer_id)" +
-                           "VALUES (@Cart_Id,@Total_Amount,@Created_At,@Updated_At,@Customer_Id)";
+                           "VALUES (@CartId,@TotalAmount,@CreatedAt,@UpdatedAt,@CustomerId)";
             using (MySqlCommand cmd = new MySqlCommand(query, connection))
             {
-                cmd.Parameters.AddWithValue("@Cart_Id", Cart_Id);
-                cmd.Parameters.AddWithValue("@Total_Amount", Total_Amount);
-                cmd.Parameters.AddWithValue("@Created_At", Created_At);
-                cmd.Parameters.AddWithValue("@Updated_At", Updated_At);
-                cmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
+                cmd.Parameters.AddWithValue("@CartId", CartId);
+                cmd.Parameters.AddWithValue("@TotalAmount", TotalAmount);
+                cmd.Parameters.AddWithValue("@CreatedAt", CreatedAt);
+                cmd.Parameters.AddWithValue("@UpdatedAt", UpdatedAt);
+                cmd.Parameters.AddWithValue("@CustomerId", CustomerId);
                 cmd.ExecuteNonQuery();
             }
 

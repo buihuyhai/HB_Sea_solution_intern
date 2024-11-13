@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace testoop1.Models
 {
-    public class Payment_method
+    public class PaymentMethod
     {
-        public string Payment_Method_Id { get; set; }
+        public string PaymentMethodId { get; set; }
         public string Name { get; set; }
 
-        public Payment_method(string payment_method_id, string name)
+        public PaymentMethod(string paymentmethodid, string name)
         {
-            Payment_Method_Id = payment_method_id;
+            PaymentMethodId = paymentmethodid;
             Name = name;
         }
     }

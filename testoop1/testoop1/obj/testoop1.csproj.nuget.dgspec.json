@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hai30\\source\\repos\\testoop1\\testoop1\\testoop1.csproj": {}
+    "E:\\Sea_solutions\\testoop1\\testoop1\\testoop1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hai30\\source\\repos\\testoop1\\testoop1\\testoop1.csproj": {
+    "E:\\Sea_solutions\\testoop1\\testoop1\\testoop1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hai30\\source\\repos\\testoop1\\testoop1\\testoop1.csproj",
+        "projectUniqueName": "E:\\Sea_solutions\\testoop1\\testoop1\\testoop1.csproj",
         "projectName": "testoop1",
-        "projectPath": "C:\\Users\\hai30\\source\\repos\\testoop1\\testoop1\\testoop1.csproj",
+        "projectPath": "E:\\Sea_solutions\\testoop1\\testoop1\\testoop1.csproj",
         "packagesPath": "C:\\Users\\hai30\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hai30\\source\\repos\\testoop1\\testoop1\\obj\\",
+        "outputPath": "E:\\Sea_solutions\\testoop1\\testoop1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hai30\\AppData\\Roaming\\NuGet\\NuGet.Config",

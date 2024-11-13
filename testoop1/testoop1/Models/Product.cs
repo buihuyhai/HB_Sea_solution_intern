@@ -8,23 +8,23 @@ namespace testoop1.Models
 {
     public class Product
     {
-        public string Product_Id { get; set; }
+        public string ProductId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Shop_Id { get; set; }
+        public string ShopId { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
-        public DateTime Created_At { get; set; }
+        public DateTime CreatedAt { get; set; }
 
-        public Product(string product_id, string name, string description, string shop_id, decimal price, int stock, DateTime created_at)
+        public Product(string productid, string name, string description, string shopid, decimal price, int stock, DateTime createdat)
         {
-            Product_Id = product_id;
+            ProductId = productid;
             Name = name;
             Description = description;
-            Shop_Id = shop_id;
+            ShopId = shopid;
             Stock = stock;
             Price = price;
-            Created_At = created_at;
+            CreatedAt = createdat;
         }
     }
 }

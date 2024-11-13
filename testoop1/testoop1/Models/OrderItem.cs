@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace testoop1.Models
 {
-    public class Order_Item
+    public class OrderItem
     {
-        public string Order_Id { get; set; }
-        public string Product_Id { get; set; }
+        public string OrderId { get; set; }
+        public string ProductId { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
-        public Order_Item(string order_Id, string product_Id, int quantity, decimal price)
+        public OrderItem(string orderId, string productId, int quantity, decimal price)
         {
-            Order_Id = order_Id;
-            Product_Id = product_Id;
+            OrderId = orderId;
+            ProductId = productId;
             Quantity = quantity;
             Price = price;
         }
@@ -26,8 +26,8 @@ namespace testoop1.Models
                            "VALUES (@OrderId, @ProductId, @Quantity, @Price)";
             using (MySqlCommand cmd = new MySqlCommand(query, connection))
             {
-                cmd.Parameters.AddWithValue("@OrderId", Order_Id);
-                cmd.Parameters.AddWithValue("@ProductId", Product_Id);
+                cmd.Parameters.AddWithValue("@OrderId", OrderId);
+                cmd.Parameters.AddWithValue("@ProductId", ProductId);
                 cmd.Parameters.AddWithValue("@Quantity", Quantity);
                 cmd.Parameters.AddWithValue("@Price", Price);
 
