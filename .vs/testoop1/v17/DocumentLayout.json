@@ -1,0 +1,204 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\factories\\transactionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\factories\\transactionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\interfaces\\interfaceisaveable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\interfaces\\interfaceisaveable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\facades\\transactionfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\facades\\transactionfacade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\singletons\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\singletons\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\abstracts\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\abstracts\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\handlers\\transactionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\handlers\\transactionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|e:\\sea_solutions\\design pattern\\hb_sea_solution_intern\\testoop1\\testoop1\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71DE46DC-B2FC-4153-B505-005FC95A626F}|testoop1\\testoop1.csproj|solutionrelative:testoop1\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TransactionHandler.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Handlers\\TransactionHandler.cs",
+              "RelativeDocumentMoniker": "testoop1\\Handlers\\TransactionHandler.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Handlers\\TransactionHandler.cs",
+              "RelativeToolTip": "testoop1\\Handlers\\TransactionHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T01:57:01.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Program.cs",
+              "RelativeDocumentMoniker": "testoop1\\Program.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Program.cs",
+              "RelativeToolTip": "testoop1\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T02:54:20.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TransactionFacade.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Facades\\TransactionFacade.cs",
+              "RelativeDocumentMoniker": "testoop1\\Facades\\TransactionFacade.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Facades\\TransactionFacade.cs",
+              "RelativeToolTip": "testoop1\\Facades\\TransactionFacade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T07:09:20.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TransactionFactory.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Factories\\TransactionFactory.cs",
+              "RelativeDocumentMoniker": "testoop1\\Factories\\TransactionFactory.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Factories\\TransactionFactory.cs",
+              "RelativeToolTip": "testoop1\\Factories\\TransactionFactory.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T07:07:13.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Databaseconnection.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Singletons\\Databaseconnection.cs",
+              "RelativeDocumentMoniker": "testoop1\\Singletons\\Databaseconnection.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Singletons\\Databaseconnection.cs",
+              "RelativeToolTip": "testoop1\\Singletons\\Databaseconnection.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T06:52:05.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "interfaceISaveable.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Interfaces\\interfaceISaveable.cs",
+              "RelativeDocumentMoniker": "testoop1\\Interfaces\\interfaceISaveable.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Interfaces\\interfaceISaveable.cs",
+              "RelativeToolTip": "testoop1\\Interfaces\\interfaceISaveable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T03:10:14.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "testoop1\\Models\\Cart.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Models\\Cart.cs",
+              "RelativeToolTip": "testoop1\\Models\\Cart.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA/wBQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T03:56:00.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Abstracts\\Transaction.cs",
+              "RelativeDocumentMoniker": "testoop1\\Abstracts\\Transaction.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Abstracts\\Transaction.cs",
+              "RelativeToolTip": "testoop1\\Abstracts\\Transaction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T06:24:59.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Order.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "testoop1\\Models\\Order.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Models\\Order.cs",
+              "RelativeToolTip": "testoop1\\Models\\Order.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAqwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T06:41:20.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Models\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "testoop1\\Models\\ShoppingCart.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Models\\ShoppingCart.cs",
+              "RelativeToolTip": "testoop1\\Models\\ShoppingCart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T03:11:43.847Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "testoop1\\Models\\OrderItem.cs",
+              "ToolTip": "E:\\Sea_solutions\\Design pattern\\HB_Sea_solution_intern\\testoop1\\testoop1\\Models\\OrderItem.cs",
+              "RelativeToolTip": "testoop1\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvxcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T07:41:58.267Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
