@@ -40,7 +40,7 @@ namespace ApiServiceTest.Controllers
 
                 return Ok(orders);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 _logger.Error("An error occurred while retrieving orders", ex);
                 return InternalServerError(ex);
@@ -65,7 +65,7 @@ namespace ApiServiceTest.Controllers
 
                 return Ok(orderDetails);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 _logger.Error($"An error occurred while retrieving details for OrderId: {orderId}", ex);
                 return InternalServerError(ex);
