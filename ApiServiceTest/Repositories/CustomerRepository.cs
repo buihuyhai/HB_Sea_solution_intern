@@ -20,20 +20,38 @@ namespace ApiServiceTest.Repositories
 
         public async Task UpdateVIPCustomersAsync()
         {
-            var customersToUpdate = await _context.Customers
-                .Where(c => c.Orders.Any() &&
-                            (c.Orders.Sum(o => o.TotalAmount) > 1000000 ||
-                             c.Orders.SelectMany(o => o.OrderItems).Select(oi => oi.ProductID).Distinct().Count() > 10) &&
-                            c.IsVip == 0)  //Chỉ update những khách hàng chưa là vip
+            var vipCustomerIds = await _context.Customers
+                .Where(c => c.IsVip == 0) // Chỉ lấy khách hàng chưa là VIP
+                .Select(c => new
+                {
+                    CustomerId = c.CustomerID,
+                    TotalOrderAmount = c.Orders.Sum(o => o.TotalAmount),
+                    DistinctProductCount = c.Orders
+                                           .SelectMany(o => o.OrderItems)
+                                           .Select(oi => oi.ProductID)
+                                           .Distinct()
+                                           .Count()
+                })
+                .Where(c => c.TotalOrderAmount > 1000000 || c.DistinctProductCount > 10)
+                .Select(c => c.CustomerId)
                 .ToListAsync();
 
-            foreach (var customer in customersToUpdate)
+            // Cập nhật trạng thái IsVip
+            if (vipCustomerIds.Any())
             {
-                customer.IsVip = 1;
-            }
+                var customersToUpdate = await _context.Customers
+                    .Where(c => vipCustomerIds.Contains(c.CustomerID))
+                    .ToListAsync();
 
-            await _context.SaveChangesAsync();
+                foreach (var customer in customersToUpdate)
+                {
+                    customer.IsVip = 1;
+                }
+
+                await _context.SaveChangesAsync();
+            }
         }
+
 
     }
 }
