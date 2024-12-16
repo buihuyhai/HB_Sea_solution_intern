@@ -16,8 +16,8 @@ namespace ApiServiceTest
         private static readonly ILog _logger = LogManager.GetLogger(typeof(WebApiApplication));
         protected void Application_Start()
         {
-            UnityConfig.RegisterComponents();
-            ConfigureQuartz();
+            UnityConfig.RegisterComponents(); //Đăng ký unityconfig
+            ConfigureQuartz(); //Config Quartz
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
             XmlConfigurator.Configure(new System.IO.FileInfo(Server.MapPath("~/log4net.config")));
@@ -47,7 +47,7 @@ namespace ApiServiceTest
                     .WithIdentity("SecondlyTrigger", "CustomerJobs")
                     .StartNow()
                     .WithSimpleSchedule(x => x
-                        .WithIntervalInMinutes(1)
+                        .WithIntervalInMinutes(1)//1 phút để test
                         .RepeatForever())
                     .Build();
 
