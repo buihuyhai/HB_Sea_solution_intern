@@ -1,12 +1,11 @@
 ﻿using ApiServiceTest.EntityRequests;
-using ApiServiceTest.EntityRespones;
+using ApiServiceTest.OrderDTO;
 using ApiServiceTest.Models;
 using ApiServiceTest.Services;
+using ApiServiceTest.UnitOfWorks;
 using log4net;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -16,103 +15,150 @@ namespace ApiServiceTest.Controllers
     public class OrdersController : ApiController
     {
         private readonly OrderServices _orderServices;
+        private readonly IUnitOfWork _unitOfWork;
         private static readonly ILog _logger = LogManager.GetLogger(typeof(OrdersController));
 
-        public OrdersController()
+        public OrdersController(IUnitOfWork unitOfWork, OrderServices orderServices)
         {
-            _orderServices = new OrderServices(new TestApiDBEntities());
+            _unitOfWork = unitOfWork;
+            _orderServices = orderServices;
         }
 
+        // Lấy danh sách đơn hàng
         [HttpGet]
         [Route("orders")]
         public async Task<IHttpActionResult> GetOrders()
         {
-
             try
             {
-                List<OrderResponse> orders = await _orderServices.GetOrdersAsync();
+                var orders = await _orderServices.GetOrdersAsync();
 
-                if (orders == null || orders.Count == 0)
+                if (orders == null || !orders.Any())
                 {
-                    _logger.Warn("No orders found");
                     return NotFound();
                 }
 
-                return Ok(orders);
+                var orderResponses = OrderMapper.ToOrderResponseList(orders);
+                return Ok(orderResponses);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                _logger.Error("An error occurred while retrieving orders", ex);
+                _logger.Error("Có lỗi khi lấy danh sách đơn hàng", ex);
                 return InternalServerError(ex);
             }
         }
 
-
+        // Lấy chi tiết đơn hàng
         [HttpGet]
-        [Route("orderdetail")]
+        [Route("orders/{orderId}")]
         public async Task<IHttpActionResult> GetOrderDetails(string orderId)
         {
-
             try
             {
-                var orderDetails = await _orderServices.GetOrderDetailsAsync(orderId);
-
-                if (orderDetails == null)
+                if (string.IsNullOrWhiteSpace(orderId))
                 {
-                    _logger.Warn($"No order details found for OrderId: {orderId}");
+                    return BadRequest("Order ID không được để trống.");
+                }
+
+                var order = await _orderServices.GetOrderDetailsAsync(orderId);
+
+                if (order == null)
+                {
                     return NotFound();
                 }
 
-                return Ok(orderDetails);
+                var orderDetailResponse = OrderMapper.ToOrderDetailResponse(order);
+                return Ok(orderDetailResponse);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                _logger.Error($"An error occurred while retrieving details for OrderId: {orderId}", ex);
+                _logger.Error("Có lỗi khi lấy chi tiết đơn hàng", ex);
                 return InternalServerError(ex);
             }
         }
 
+        // Tạo đơn hàng mới
         [HttpPost]
         [Route("orders")]
-        public async Task<IHttpActionResult> CreateOrder(CreateOrderRequest request)
+        public async Task<IHttpActionResult> CreateOrder([FromBody] CreateOrderRequest request)
         {
-
             try
             {
                 if (request == null || request.OrderItems == null || !request.OrderItems.Any())
                 {
-                    _logger.Error("Invalid order request. Order and order items are required.");
-                    return BadRequest("Invalid order request. Order and order items are required.");
+                    return BadRequest("Đơn hàng và danh sách mặt hàng không được để trống.");
                 }
 
-                var isCreated = await _orderServices.CreateOrderAsync(request);
+                if (request.OrderItems.Any(item => item.Quantity <= 0))
+                {
+                    return BadRequest("Số lượng của mỗi mặt hàng phải lớn hơn 0.");
+                }
+
+                var orderItems = request.OrderItems.Select(item => new OrderItem
+                {
+                    ProductID = item.ProductID,
+                    Quantity = item.Quantity,
+                }).ToList();
+
+                decimal totalAmount = 0;
+                foreach (var orderItem in orderItems)
+                {
+                    if (string.IsNullOrWhiteSpace(orderItem.ProductID))
+                    {
+                        return BadRequest("Product ID không được để trống.");
+                    }
+
+                    var product = await _unitOfWork.ProductRepository.GetProductByIdAsync(orderItem.ProductID);
+                    if (product == null)
+                    {
+                        return BadRequest($"Không tìm thấy sản phẩm với ID: {orderItem.ProductID}.");
+                    }
+
+                    orderItem.Price = product.Price;
+                    totalAmount += (orderItem.Quantity ?? 0) * (orderItem.Price ?? 0);
+                }
+
+                var order = new Order
+                {
+                    OrderID = Guid.NewGuid().ToString(),
+                    OrderDate = DateTime.Now,
+                    CustomerID = request.CustomerID,
+                    ShippingProviderID = request.ShippingProviderID,
+                    PaymentMethodID = request.PaymentMethodID,
+                    TotalAmount = totalAmount,
+                    DeliveryStatus = request.DeliveryStatus,
+                    OverdueDate = request.OverdueDate,
+                    PaymentStatus = request.PaymentStatus,
+                    PaidAt = request.PaidAt,
+                    OrderItems = orderItems
+                };
+
+                var isCreated = await _orderServices.CreateOrderAsync(order);
 
                 if (!isCreated)
                 {
-                    return BadRequest("Failed to create the order");
+                    return BadRequest("Không thể tạo đơn hàng.");
                 }
 
-                return Ok("Order created successfully");
+                return Ok("Đơn hàng được tạo thành công.");
             }
             catch (Exception ex)
             {
-                _logger.Error("An error occurred while creating the order", ex);
+                _logger.Error("Có lỗi khi tạo đơn hàng", ex);
                 return InternalServerError(ex);
             }
         }
 
+        // Xóa item khỏi đơn hàng
         [HttpDelete]
-        [Route("{orderId}/items/{productId}")]
+        [Route("orders/{orderId}/items/{productId}")]
         public async Task<IHttpActionResult> RemoveOrderItem(string orderId, string productId)
         {
-
             try
             {
-
-                if (string.IsNullOrEmpty(orderId) || string.IsNullOrEmpty(productId))
+                if (string.IsNullOrWhiteSpace(orderId) || string.IsNullOrWhiteSpace(productId))
                 {
-                    _logger.Error("Order ID and Product ID are required.");
-                    return BadRequest("Order ID and Product ID are required.");
+                    return BadRequest("Order ID và Product ID không được để trống.");
                 }
 
                 var isRemoved = await _orderServices.RemoveOrderItemAsync(orderId, productId);
@@ -122,43 +168,42 @@ namespace ApiServiceTest.Controllers
                     return NotFound();
                 }
 
-                return Ok("Order item removed successfully.");
+                return Ok("Mặt hàng đã được xóa khỏi đơn hàng thành công.");
             }
             catch (Exception ex)
             {
-                _logger.Error("An error occurred while removing the order item", ex);
+                _logger.Error("Có lỗi khi xóa mặt hàng khỏi đơn hàng", ex);
                 return InternalServerError(ex);
             }
         }
 
+        // Tìm kiếm đơn hàng theo keyword
         [HttpGet]
-        [Route("search")]
-        public async Task<IHttpActionResult> SearchOrdersByKeyword([FromUri] string keyword)
+        [Route("orders/search/keyword/{keyword}")]
+        public async Task<IHttpActionResult> SearchOrdersByKeyword(string keyword)
         {
-
             try
             {
-                if (string.IsNullOrEmpty(keyword))
+                if (string.IsNullOrWhiteSpace(keyword))
                 {
-                    _logger.Error("Keyword is required.");
-                    return BadRequest("Keyword is required.");
+                    return BadRequest("Từ khóa không được để trống.");
                 }
 
                 var orders = await _orderServices.SearchOrdersByKeywordAsync(keyword);
 
-                if (orders == null || orders.Count == 0)
+                if (orders == null || !orders.Any())
                 {
                     return NotFound();
                 }
 
-                return Ok(orders);
+                var orderResponses = OrderMapper.ToOrderResponseList(orders);
+                return Ok(orderResponses);
             }
             catch (Exception ex)
             {
-                _logger.Error("An error occurred while searching orders by product name", ex);
+                _logger.Error("Có lỗi khi tìm kiếm đơn hàng", ex);
                 return InternalServerError(ex);
             }
         }
-
     }
 }

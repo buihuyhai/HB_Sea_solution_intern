@@ -1,28 +1,29 @@
-﻿using ApiServiceTest.Models;
+﻿using ApiServiceTest.UnitOfWorks;
 using Quartz;
+using log4net;
 using System;
 using System.Threading.Tasks;
 
 public class UpdateVIPCustomersJob : IJob
 {
     private readonly CustomerServices _customerServices;
+    private static readonly ILog _logger = LogManager.GetLogger(typeof(UpdateVIPCustomersJob));
 
-    public UpdateVIPCustomersJob()
+    public UpdateVIPCustomersJob(CustomerServices customerServices)
     {
-        _customerServices = new CustomerServices(new TestApiDBEntities());
+        _customerServices = customerServices;
     }
 
     public async Task Execute(IJobExecutionContext context)
     {
-        Console.WriteLine("Running UpdateVIPCustomersJob...");
         try
         {
             await _customerServices.UpdateVIPCustomersAsync();
-            Console.WriteLine("VIP customer update completed.");
+            _logger.Info("VIP customer update completed successfully.");
         }
         catch (Exception ex)
         {
-            Console.Error.WriteLine($"Error while updating VIP customers: {ex.Message}");
+            _logger.Error("Error while updating VIP customers.", ex);
         }
     }
 }

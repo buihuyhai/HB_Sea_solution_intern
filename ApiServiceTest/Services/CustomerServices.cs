@@ -1,30 +1,21 @@
 ﻿using ApiServiceTest.Models;
+using ApiServiceTest.UnitOfWorks;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
 public class CustomerServices
 {
-    private readonly TestApiDBEntities _context;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public CustomerServices(TestApiDBEntities context)
+    public CustomerServices(IUnitOfWork unitOfWork)
     {
-        _context = context;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task UpdateVIPCustomersAsync()
     {
-        var customersToUpdate = await _context.Customers
-            .Where(c => c.Orders.Any() &&
-                        (c.Orders.Sum(o => o.TotalAmount) > 1000000 ||
-                         c.Orders.SelectMany(o => o.OrderItems).Select(oi => oi.ProductID).Distinct().Count() > 10))
-            .ToListAsync();
-
-        foreach (var customer in customersToUpdate)
-        {
-            customer.IsVip =1;
-        }
-
-        await _context.SaveChangesAsync();
+        await _unitOfWork.CustomerRepository.UpdateVIPCustomersAsync();
     }
 }
+

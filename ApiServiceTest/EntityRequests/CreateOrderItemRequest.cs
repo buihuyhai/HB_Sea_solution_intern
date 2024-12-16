@@ -9,7 +9,6 @@ namespace ApiServiceTest.EntityRequests
     {
         public string ProductID { get; set; }
         public int Quantity { get; set; }
-        public decimal Price { get; set; }
     }
 
 }

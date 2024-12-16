@@ -105,3 +105,15 @@ E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\System.Threading.Tasks.Extens
 E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\System.ValueTuple.xml
 E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Quartz.dll
 E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Quartz.xml
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Unity.Abstractions.dll
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Unity.Container.dll
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Unity.Abstractions.pdb
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Unity.Container.pdb
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Unity.WebApi.dll
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Microsoft.Extensions.Configuration.Binder.dll
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Microsoft.Extensions.Configuration.dll
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Microsoft.Extensions.Configuration.xml
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+E:\Sea_solutions\ApiServiceTest\ApiServiceTest\bin\Microsoft.Extensions.Configuration.Binder.xml
